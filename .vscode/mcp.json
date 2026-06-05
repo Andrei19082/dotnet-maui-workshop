@@ -1,0 +1,24 @@
+{
+	"servers": {
+		"com.shipstatic/mcp": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"@shipstatic/mcp@0.6.0"
+			],
+			"env": {
+				"SHIP_API_KEY": "${input:SHIP_API_KEY}"
+			},
+			"gallery": "https://api.mcp.github.com",
+			"version": "0.6.0"
+		}
+	},
+	"inputs": [
+		{
+			"id": "SHIP_API_KEY",
+			"type": "promptString",
+			"description": "Optional. Without it, deploys behave like the hosted endpoint (public, claim URL, 3-day expiry). With it, deployments are permanent, the full toolset (custom domains, listing, account-tied ops) unlocks, and you get bigger limits.",
+			"password": true
+		}
+	]
+}
